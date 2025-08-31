@@ -66,24 +66,22 @@ graph TD;
 ---
 
 ## 📂 Text Embeddings  
-**Goal:** Hiểu và áp dụng các kỹ thuật embedding cho văn bản  
+### Task
+- Train Word2Vec embeddings on the dataset  
+- Visualize embeddings (e.g., using PCA or t-SNE)  
+- Report insights
 
 ## 🧑‍💻 Workflow
-Load data → Read Vietnamese Wikipedia text (UTF-16).
+1. Load data → Read Vietnamese Wikipedia text (UTF-16).
+2. Explore → Checked size & sample text.
+3. Tokenize → Used NLTK to split into words.
+4. Train embeddings → Word2Vec (vector_size=100, window=5, skip-gram, 10 epochs).
+5. Track training → Logged + plotted loss per epoch.
+6. Extract embeddings → Got embedding_matrix, word-to-index map.
+7. Explore vocabulary → Printed sample words, embeddings.
+8. Similarity check → Found most similar words (e.g., to “một”).
+9. Visualize 10 random embeddings
 
-Explore → Checked size & sample text.
-
-Tokenize → Used NLTK to split into words.
-
-Train embeddings → Word2Vec (vector_size=100, window=5, skip-gram, 10 epochs).
-
-Track training → Logged + plotted loss per epoch.
-
-Extract embeddings → Got embedding_matrix, word-to-index map.
-
-Explore vocabulary → Printed sample words, embeddings.
-
-Similarity check → Found most similar words (e.g., to “một”).
 ### Techniques Covered
 - Word2Vec ✅ 
 - Average Word2Vec  
