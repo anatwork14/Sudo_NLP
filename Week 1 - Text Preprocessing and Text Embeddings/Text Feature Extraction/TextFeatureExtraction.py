@@ -1,6 +1,4 @@
 
-
-import pandas as pd
 import json
 
 with open('/content/drive/MyDrive/SudoCode/Week 1 - Text Preprocessing/news_dataset.json', 'r', encoding='utf-8') as f:

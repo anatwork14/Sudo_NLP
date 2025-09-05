@@ -1,0 +1,11 @@
+# Model Config
+VECTOR_SIZE = 100
+WINDOW = 5
+MIN_COUNT=5
+SG=1
+WORKERS=4
+EPOCHS=10
+COMPUTE_LOSS=True
+
+# File
+PATH = '../viwik19.txt'

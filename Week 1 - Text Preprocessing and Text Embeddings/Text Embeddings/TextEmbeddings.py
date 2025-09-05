@@ -1,5 +1,3 @@
-get_ipython().system('pip install -U gensim')
-
 with open('/content/drive/MyDrive/SudoCode/Week 1 - Text Embeddings/viwik19.txt', encoding='utf-16') as f:
     data = f.read()
 
