@@ -1,4 +1,5 @@
-f = open('/content/drive/MyDrive/SudoCode/Week 1 - Text Preprocessing/news_dataset.json',encoding = 'utf-8')
+f = open('../news_dataset.json',encoding = 'utf-8')
+import pandas as pd
 
 raw_data = f.read()
 
@@ -6,11 +7,8 @@ working_data = raw_data[:3166]
 
 # # Approach 1: Preprocessing with specialized tokenization
 # 
-
-nltk.download('punkt_tab')
-
 import nltk, re
-from nltk import word_tokenize
+nltk.download('punkt_tab')
 
 # **Objective**: Do thấy data ở dạng raw và có cấu trúc gồm cái field như id, author, content nên em có phương hướng xử lý chung như sau
 # 
@@ -38,21 +36,24 @@ pattern = r'''(?x)     # set flag to allow verbose regexps
 nltk.regexp_tokenize(clean_re, pattern)
 
 clean_raw_data_nltk = nltk.wordpunct_tokenize(clean_re)
-
+print('Approach 1:', nltk.regexp_tokenize(clean_re, pattern))
+print('')
 # # Approach 2: Preprocessing with normalize everything - treat it the same
 # 
 
 token_nltk = nltk.word_tokenize(working_data.lower())
 
 
-
+print('Approach 2:', token_nltk)
 # # Approach 3: Preprocessing in table - Sentence Segmentation
 # 
 
 import pandas as pd
-data = pd.read_json('/content/drive/MyDrive/SudoCode/Week 1 - Text Preprocessing/news_dataset.json')
+data = pd.read_json('../news_dataset.json')
 
 data["sentences"] = data["content"].apply(lambda x: nltk.sent_tokenize(str(x)))
+print('')
+print('Approach 3:', data['sentences'][0])
 
 
 
