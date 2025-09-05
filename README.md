@@ -27,8 +27,8 @@ Share the journey with others learning NLP
 | **Text preprocessing**                   | Tokenizer <br> Vectorization <br> Stopwords <br> Lemmatization <br> Normalization                        | NLTK – Text Preprocessing        | ✅        |
 | **Text feature extraction**              | Bag of Words <br> TFIDF <br> Unigram <br> Bigram                                                         | Scikit-learn: Feature Extraction | ✅        |
 | **Text embeddings**                      | Word2Vec <br> Avg Word2Vec <br> Doc2Vec                                                                  | Gensim Word2Vec                  | ✅        |
-| **Machine Learning for NLP**             | SVM <br> Naive Bayes                                                                                     | Scikit-learn Classification      |         |
-| **Deep Learning for NLP**                | Hidden layer <br> Perceptron <br> Gradient descent <br> Loss function                                    | Deep Learning Book, TensorFlow   |         |
+| **Machine Learning for NLP**             | SVM <br> Naive Bayes                                                                                     | Scikit-learn Classification      | ✅        |
+| **Deep Learning for NLP**                | Hidden layer <br> Perceptron <br> Gradient descent <br> Loss function                                    | Deep Learning Book, TensorFlow   | ✅        |
 | **Sequential Models**                    | ANN <br> RNN <br> LSTM <br> GRU                                                                          | Understanding LSTM Networks      |         |
 | **Attention model**                      | Encoder-decoder <br> Self-attention                                                                      | *Attention Is All You Need*      |         |
 | **Transformer**                          | Transformer                                                                                              | The Transformer Model            |         |
