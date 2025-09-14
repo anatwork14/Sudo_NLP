@@ -3,7 +3,7 @@ import torch
 
 class Predictor:
     def generate_text(model, seed_text, stoi, itos, next_words=20, seq_len=50, temperature=1.0):
-        model.eval()
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         words = seed_text.split()
         for _ in range(next_words):
             encoded = [stoi.get(w, 0) for w in words]
