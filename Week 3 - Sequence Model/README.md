@@ -27,7 +27,7 @@ venv\Scripts\activate        # Windows (PowerShell)
 
 # Install dependencies
 pip install -r requirements.txt
-```
+bash```
 
 ````
 
@@ -125,4 +125,3 @@ Example output:
 - ✅ Pretrained embeddings with `underthesea` tokenizer
 - ✅ Auto-trains if no saved model is found
 - ⚠️ Quality depends heavily on dataset size & consistency
-````
