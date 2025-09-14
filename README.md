@@ -29,7 +29,7 @@ Share the journey with others learning NLP
 | **Text embeddings**                      | Word2Vec <br> Avg Word2Vec <br> Doc2Vec                                                                  | Gensim Word2Vec                  | ✅        |
 | **Machine Learning for NLP**             | SVM <br> Naive Bayes                                                                                     | Scikit-learn Classification      | ✅        |
 | **Deep Learning for NLP**                | Hidden layer <br> Perceptron <br> Gradient descent <br> Loss function                                    | Deep Learning Book, TensorFlow   | ✅        |
-| **Sequential Models**                    | ANN <br> RNN <br> LSTM <br> GRU                                                                          | Understanding LSTM Networks      |         |
+| **Sequential Models**                    | ANN <br> RNN <br> LSTM <br> GRU                                                                          | Understanding LSTM Networks      | ✅      |
 | **Attention model**                      | Encoder-decoder <br> Self-attention                                                                      | *Attention Is All You Need*      |         |
 | **Transformer**                          | Transformer                                                                                              | The Transformer Model            |         |
 | **Nghiên cứu LLM**                       | GPT, Gemini, Claude <br> LLaMA, MPT, Bloom <br> Metrics: GLUE, MMLU                                      | OpenAI Docs, Gemini Docs         |        |
