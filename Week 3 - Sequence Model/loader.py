@@ -1,4 +1,4 @@
-from config import folder
+from config import folder, num_doc
 from utils import *
 import os 
 
@@ -9,9 +9,8 @@ class Loader:
         files = os.listdir(folder)
         for file in files:
             path = folder + "/" + file
-            print(path)
             try:
-                if (count == 10):
+                if (count == num_doc):
                     break
                 self.corpus.append(Utils.read_file(path, "utf-8"))
                 count +=1 

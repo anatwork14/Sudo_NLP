@@ -6,23 +6,36 @@ import torch
 import numpy as np
 
 class Utils: 
-    def read_file(path, encoding):
-            content = []
-            with open(path, "r", encoding=encoding, errors="ignore") as f:
-                for i, line in enumerate(f, start=1):
-                    if i <= 2:   # skip first 2 lines
-                        continue
-                    low = line.lower()
-                    low = re.sub(r"[^0-9a-zA-ZÀ-Ỹà-ỹ\s]", "", low)
-                    if "mục lục" in low or "dịch giả" in low:
-                        break
-                    content.append(low.strip())
-            return " ".join(content)
+    @staticmethod
+    def read_file(path, encoding="utf-8"):
+        """Read file, clean text, skip first 2 lines, stop at 'mục lục' or 'dịch giả'."""
+        content = []
+        with open(path, "r", encoding=encoding, errors="ignore") as f:
+            for i, line in enumerate(f, start=1):
+                if i <= 2:   # skip first 2 lines
+                    continue
+                low = line.lower()
+                low = re.sub(r"[^0-9a-zA-ZÀ-Ỹà-ỹ\s]", "", low)
+                if "mục lục" in low or "dịch giả" in low:
+                    break
+                content.append(low.strip())
+        return " ".join(content)
     
+    @staticmethod
     def tokenize(text): 
         return word_tokenize(text)
     
+    def __init__(self):
+        self.w2v_model = None
+        self.vocab = []
+        self.stoi = {}
+        self.itos = {}
+        self.embedding_dim = 0
+        self.vocab_size = 0
+        self.embedding_matrix = None
+    
     def embedding_data(self, corpus):
+        """Train Word2Vec model and build vocab/lookup tables."""
         self.w2v_model = Word2Vec(
             sentences=corpus,   # tokenized text
             vector_size=100,    # embedding dimension
@@ -36,15 +49,15 @@ class Utils:
 
         self.embedding_dim = self.w2v_model.vector_size
         self.vocab_size = len(self.vocab)
+        self.get_embedding_matrix()
     
         return self.w2v_model
     
-    
     def get_embedding_matrix(self):
+        """Return torch embedding matrix for model training."""
         embedding_matrix = np.zeros((self.vocab_size, self.embedding_dim))
         for word, idx in self.stoi.items():
             embedding_matrix[idx] = self.w2v_model.wv[word]
 
         self.embedding_matrix = torch.tensor(embedding_matrix, dtype=torch.float32)
         return self.embedding_matrix
-        
