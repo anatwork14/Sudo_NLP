@@ -1,3 +1,4 @@
 *.pth
 *.pt
 !data/.gitkeep
+.env
